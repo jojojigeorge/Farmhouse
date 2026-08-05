@@ -11,24 +11,32 @@ const farmData = {
     {
       id: 1,
       url:"/images/vettia1.jpg",
-      caption: "100% ജൈവ വെറ്റില കൃഷി"
+      caption: "ജി.ഐ പൈപ്പിൽ നട്ട വെറ്റില കൃഷി"
     },
     {
       id: 2,
       url:"/images/vettia2.jpg",
-      caption: "വിഷരഹിത നാടൻ ഇനങ്ങൾ"
+      caption: "30 വർഷത്തെ പ്രവൃത്തിപരിചയം"
     },
     {
       id: 3,
       url: "/images/vettia3.jpg",
-      caption: " ഫ്രഷ് വിളവെടുപ്പ്"
+      caption: "100% ജൈവ വെറ്റില കൃഷി"
     }
   ],
 
   // ലൂപ്പിംഗ് വീഡിയോ (LOOPING VIDEO)
   // Direct MP4 link ensures true seamless repeat playback
   loopVideoUrl: "/video/video1.mp4",
-
+ // --- ADD THIS NEW PHOTO GALLERY ARRAY ---
+  photoGallery: [
+    { id: 1, url: "/images/vettia13.jpg", title: "വെറ്റില വിളവെടുപ്പ്" },
+    { id: 2, url: "/images/vettia12.jpg", title: "തോട്ടത്തിലെ കൊടികൾ" },
+    { id: 3, url: "/images/vettia2.jpg", title: "വെറ്റിലകൾ" },
+    { id: 4, url: "/images/vettia14.jpg", title: "Achievement" },
+    { id: 5, url: "/images/vettia15.jpg", title: "വെറ്റില" },
+    { id: 6, url: "/images/vettia11.jpg", title: "ഫ്രഷ് ഇലകൾ" }
+  ],
   // മിനിമൽ വിവരങ്ങൾ (MINIMAL DETAILS)
   highlights: [
     { title: "തുളസി വെറ്റില", desc: "മൃദുവായതും സുഗന്ധമുള്ളതുമായ പ്രീമിയം ഇനം." },
@@ -142,6 +150,35 @@ export default function App() {
               <p className="text-xs text-stone-400 leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </section>
+        {/* PHOTO GALLERY GRID */}
+        <section className="space-y-6">
+          <div className="flex items-center space-x-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <h2 className="text-xs font-semibold text-stone-400 uppercase tracking-widest">
+              ചിത്രങ്ങൾ (Photo Gallery)
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {farmData.photoGallery.map((photo) => (
+              <div 
+                key={photo.id} 
+                className="group relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-white/10 bg-stone-900 shadow-lg"
+              >
+                <img
+                  src={photo.url}
+                  alt={photo.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                  <span className="text-xs font-medium text-emerald-300">
+                    {photo.title}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* 5. MODERN WHATSAPP CONTACT CARD */}
