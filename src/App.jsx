@@ -33,9 +33,12 @@ const farmData = {
     { id: 1, url: "/images/vettia13.jpg", title: "വെറ്റില വിളവെടുപ്പ്" },
     { id: 2, url: "/images/vettia12.jpg", title: "തോട്ടത്തിലെ കൊടികൾ" },
     { id: 3, url: "/images/vettia2.jpg", title: "വെറ്റിലകൾ" },
+    { id: 9, url: "/images/vettia1.jpg", title: "വെറ്റിലകൾ" },
     { id: 4, url: "/images/vettia14.jpg", title: "Achievement" },
     { id: 5, url: "/images/vettia15.jpg", title: "വെറ്റില" },
-    { id: 6, url: "/images/vettia11.jpg", title: "ഫ്രഷ് ഇലകൾ" }
+    { id: 6, url: "/images/vettia11.jpg", title: "ഫ്രഷ് ഇലകൾ" },
+    { id: 7, url: "/images/award.jpg", title: "Award 2026" },
+    { id: 8, url: "/images/memento.jpg", title: "മികച്ച വെറ്റില കർഷകൻ" },
   ],
   // മിനിമൽ വിവരങ്ങൾ (MINIMAL DETAILS)
   highlights: [
@@ -128,7 +131,7 @@ export default function App() {
             <video
               autoPlay
               loop
-              muted
+              
               playsInline
               className="w-full h-full object-cover"
             >
